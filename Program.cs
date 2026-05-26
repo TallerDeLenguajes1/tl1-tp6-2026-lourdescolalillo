@@ -1,10 +1,4 @@
-﻿using System;
-namespace PrimerEjercicio
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+﻿
             Console.WriteLine("Hello, World!");
                 int a;
                 int b;
@@ -121,6 +115,4 @@ namespace PrimerEjercicio
                 continuar = Console.ReadLine().ToUpper();
             }while(continuar == "S");
             Console.ReadKey();
-        }
-    }
-}
+            
