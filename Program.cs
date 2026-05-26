@@ -44,6 +44,31 @@
 
             Console.WriteLine("-------------------------------------------");
             //EJERCICIO 3
-            
+            Console.WriteLine("====MEJORAS DE CALCULADORA====");
+            Console.Write("Ingrese un numero real: ");
+            if(double.TryParse(Console.ReadLine(), out double numero))
+            {
+                Console.WriteLine($"\nRESULTADOS DEL NUMERO INGRESADO");
+                Console.WriteLine($"El valor absoluto: {Math.Abs(numero)}");
+                Console.WriteLine($"El cuadrado: {Math.Pow(numero)}");
+                if(numero >= 0)
+                {
+                Console.WriteLine($"La raiz cuadrada: {Math.Sqrt(numero)}");
+                }
+                else
+                {
+                    Console.WriteLine($"Error.No existe raiz cuadrada real para el numero ingresado");
+                }
+                Console.WriteLine($"El seno: {Math.Sin(numero)}");
+                Console.WriteLine($"El coseno: {Math.Cos(numero)}");
+                float numeroEnFloat = (float)numero;
+                Console.WriteLine($"La parte entera: {Math.Truncate(numeroEnFloat)}");
+
+            }
+            else
+            {
+                Console.WriteLine("Error.Lo ingresado no es un numero");
+            }
+
             Console.ReadKey();
             
