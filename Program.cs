@@ -42,6 +42,4 @@
                 Console.WriteLine("Error. Lo ingresado no es un numero entero");
             }
             Console.ReadKey();
-        }
-    }
-}
+            
