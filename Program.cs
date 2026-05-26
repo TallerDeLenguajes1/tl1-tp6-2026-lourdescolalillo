@@ -44,24 +44,26 @@
 
             Console.WriteLine("-------------------------------------------");
             //EJERCICIO 3
+
+            double numeroReal;
             Console.WriteLine("====MEJORAS DE CALCULADORA====");
             Console.Write("Ingrese un numero real: ");
-            if(double.TryParse(Console.ReadLine(), out double numero))
+            if(double.TryParse(Console.ReadLine(), out numeroReal))
             {
                 Console.WriteLine($"\nRESULTADOS DEL NUMERO INGRESADO");
-                Console.WriteLine($"El valor absoluto: {Math.Abs(numero)}");
-                Console.WriteLine($"El cuadrado: {Math.Pow(numero)}");
-                if(numero >= 0)
+                Console.WriteLine($"El valor absoluto: {Math.Abs(numeroReal)}");
+                Console.WriteLine($"El cuadrado: {Math.Pow(numeroReal, 2)}");
+                if(numeroReal >= 0)
                 {
-                Console.WriteLine($"La raiz cuadrada: {Math.Sqrt(numero)}");
+                Console.WriteLine($"La raiz cuadrada: {Math.Sqrt(numeroReal)}");
                 }
                 else
                 {
                     Console.WriteLine($"Error.No existe raiz cuadrada real para el numero ingresado");
                 }
-                Console.WriteLine($"El seno: {Math.Sin(numero)}");
-                Console.WriteLine($"El coseno: {Math.Cos(numero)}");
-                float numeroEnFloat = (float)numero;
+                Console.WriteLine($"El seno: {Math.Sin(numeroReal)}");
+                Console.WriteLine($"El coseno: {Math.Cos(numeroReal)}");
+                float numeroEnFloat = (float)numeroReal;
                 Console.WriteLine($"La parte entera: {Math.Truncate(numeroEnFloat)}");
 
             }
@@ -69,6 +71,27 @@
             {
                 Console.WriteLine("Error.Lo ingresado no es un numero");
             }
+            Console.WriteLine("=== DETERMINAR MÁXIMO Y MÍNIMO ===");
+            Console.Write("Ingrese el primer numero: ");
+            if(double.TryParse(Console.ReadLine(), out double numero1))
+            {
+                Console.Write("Ingrese el segundo numero:");
+                if(double.TryParse(Console.ReadLine(), out double numero2))
+                {
+                    double maximo = Math.Max(numero1,numero2);
+                    double minimo = Math.Min(numero1,numero2);
 
+                    Console.WriteLine($"\nEl maximo entre ambos numeros es: {maximo}");
+                    Console.WriteLine($"\nEl minimo entre ambos numeros es: {minimo}");
+                }
+                else
+                {
+                    Console.WriteLine("Error.Lo ingresado no es un numero");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error. Lo ingresado no es un numero");
+            }
             Console.ReadKey();
             
