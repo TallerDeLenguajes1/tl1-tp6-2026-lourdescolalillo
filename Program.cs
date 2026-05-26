@@ -44,7 +44,7 @@
 
             Console.WriteLine("-------------------------------------------");
             //EJERCICIO 3
-
+            Console.Clear();
             double numeroReal;
             Console.WriteLine("====MEJORAS DE CALCULADORA====");
             Console.Write("Ingrese un numero real: ");
