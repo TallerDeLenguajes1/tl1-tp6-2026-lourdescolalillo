@@ -48,7 +48,6 @@ Console.WriteLine("\n-------------------------------------------");
 string continuar = "";
 do
 {
-    Console.Clear();
     Console.WriteLine("====MENU DE CALCULADORA====");
     Console.WriteLine("1.Sumar");
     Console.WriteLine("2.Restar");
@@ -215,4 +214,86 @@ foreach (char letra in cadenaPrincipal)
     Console.Write($"[{letra}] ");
 }
 Console.WriteLine();
+
+/*buscar la ocurrencia de una palabra*/
+Console.Write("Ingrese la palabra que desea buscar: ");
+string palabraBuscada = Console.ReadLine();
+if (cadenaPrincipal.Contains(palabraBuscada))
+{
+    Console.WriteLine($"la palabra {palabraBuscada} si se encuentra en el texto");
+}
+else
+{
+    Console.WriteLine($"la palabra {palabraBuscada} no se encuentra en el texto");
+}
+
+/*convertir la cadena a mayusculas y minusculas*/
+Console.WriteLine($"texto en mayusculas: {cadenaPrincipal.ToUpper()}");
+Console.WriteLine($"texto en minusculas: {cadenaPrincipal.ToLower()}");
+
+/*cadena separada por un determinado elemento*/
+Console.Write("Ingrese una serie de palabras separadas por comas(,): ");
+string cadenaSeparada = Console.ReadLine();
+string[] palabrasSeparadas = cadenaSeparada.Split(',');
+foreach (string elemento in palabrasSeparadas)
+{
+    Console.Write($" - {elemento.Trim()}");
+}
+Console.WriteLine();
+
+/*resolver ecuacion simple*/
+Console.Write("Ingrese una ecuacion simple: ");
+string ecuacion = Console.ReadLine();
+char operador = ' ';
+if (ecuacion.Contains("+"))
+{
+    operador = '+';
+}
+else if (ecuacion.Contains("-"))
+{
+    operador = '-';
+}
+else if (ecuacion.Contains("/"))
+{
+    operador = '/';
+}
+else if (ecuacion.Contains("*"))
+{
+    operador = '*';
+}
+if (operador != ' ')
+{
+    string[] numeros = ecuacion.Split(operador);
+    if (double.TryParse(numeros[0], out double numA) && double.TryParse(numeros[1], out double numB))
+    {
+        double res = 0;
+        switch (operador)
+        {
+            case '+':
+                res = numA + numB;
+                break;
+
+            case '-':
+                res = numA - numB;
+                break;
+
+            case '*':
+                res = numA * numB;
+                break;
+
+            case '/':
+                if (numB != 0)
+                {
+                    res = numA / numB;
+                }
+                else
+                {
+                    Console.WriteLine("Error. No se puede realizar la division por cero");
+                }
+                break;
+        }
+        Console.WriteLine($"El resultado de la ecuacion es: {res}");
+    }
+}
+Console.WriteLine("Error. No se encontro un operador valido");
 Console.ReadKey();
